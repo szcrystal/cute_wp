@@ -1,0 +1,106 @@
+body .site .site-content .content-area .entry-header {
+  margin-bottom: 10px;
+}
+body .site .site-content .content-area .entry-header .inner-entry-header {
+  background: #a3dfe0;
+  padding: 0 10px;
+}
+body .site .site-content .content-area .entry-header .inner-entry-header h1.entry-title {
+  border-bottom: 1px solid #fff;
+  font-size: 110%;
+  font-weight: 400;
+  padding: 5px 0;
+  margin-bottom: 5px;
+}
+body .site .site-content .content-area .entry-header .inner-entry-header .author-avatar-single.row {
+  padding-bottom: 5px;
+}
+body .site .site-content .content-area .entry-header .inner-entry-header .author-avatar-single.row img.avatar {
+  float: left;
+}
+body .site .site-content .content-area .entry-header .inner-entry-header .author-avatar-single.row .fright {
+  padding-top: 15px;
+  width: 240px;
+}
+body .site .site-content .content-area .entry-header .inner-entry-header .entry-date {
+  text-align: right;
+  margin-right: 20px;
+  font-weight: 700;
+}
+body .site .site-content .content-area .entry-content {
+  padding: 0 10px;
+}
+body .site .site-content .content-area .entry-content .author-info-single {
+  border-top: 1px solid #ccc;
+  /* border-bottom: 1px solid #ccc; */
+  padding-bottom: 10px;
+}
+body .site .site-content .content-area .entry-content .author-info-single h2.author-bio-ttl {
+  color: #51bfc2;
+  font-size: 110%;
+  font-weight: 700;
+  padding: 10px 0 5px 0;
+}
+body .site .site-content .content-area .entry-content .author-info-single .author-bio-content p {
+  margin: 0;
+  padding: 0;
+}
+body .site .site-content .content-area .entry-footer {
+  padding: 0 10px;
+  margin: 0;
+  text-align: right;
+}
+body .site .site-content .content-area .pagination-wrap {
+  background-color: #eee;
+}
+body .site .site-content .content-area .pagination-wrap .post-navigation {
+  border: none;
+  clear: both;
+  margin: 0;
+}
+body .site .site-content .content-area .pagination-wrap .post-navigation div + div {
+  border: none;
+}
+body .site .site-content .content-area .pagination-wrap .post-navigation .nav-links {
+  overflow: hidden;
+  *zoom: 1;
+  padding: 15px 70px;
+}
+body .site .site-content .content-area .pagination-wrap .post-navigation .nav-links .nav-previous, body .site .site-content .content-area .pagination-wrap .post-navigation .nav-links .nav-next {
+  width: 40px;
+  height: 40px;
+}
+body .site .site-content .content-area .pagination-wrap .post-navigation .nav-links .nav-previous a, body .site .site-content .content-area .pagination-wrap .post-navigation .nav-links .nav-next a {
+  display: block;
+  width: 40px;
+  height: 40px;
+}
+body .site .site-content .content-area .pagination-wrap .post-navigation .nav-links .nav-previous a .post-title, body .site .site-content .content-area .pagination-wrap .post-navigation .nav-links .nav-next a .post-title {
+  display: block;
+}
+body .site .site-content .content-area .pagination-wrap .post-navigation .nav-links .nav-previous a span, body .site .site-content .content-area .pagination-wrap .post-navigation .nav-links .nav-next a span {
+  text-indent: -9999px;
+}
+body .site .site-content .content-area .pagination-wrap .post-navigation .nav-links .nav-previous {
+  float: left;
+  background: url(../images/pagination/prev.png) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+body .site .site-content .content-area .pagination-wrap .post-navigation .nav-links .nav-previous:after {
+  position: absolute;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  left: 65px;
+  top: -5px;
+  background-position: center center;
+  background-size: cover;
+}
+body .site .site-content .content-area .pagination-wrap .post-navigation .nav-links .nav-next {
+  float: right;
+  background: url(../images/pagination/next.png) no-repeat;
+  background-size: cover;
+}

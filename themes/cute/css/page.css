@@ -1,0 +1,19 @@
+body .site .site-content .content-area .entry-header {
+  margin-bottom: 10px;
+}
+body .site .site-content .content-area .entry-header .inner-entry-header {
+  background: #a3dfe0;
+  padding: 0 10px;
+}
+body .site .site-content .content-area .entry-header .inner-entry-header h1.entry-title {
+  font-size: 110%;
+  font-weight: 400;
+  padding: 5px 0;
+  margin-bottom: 5px;
+}
+body .site .site-content .content-area .entry-content {
+  padding: 0 10px;
+}
+body .site .site-content .content-area .entry-footer {
+  padding: 0 10px;
+}

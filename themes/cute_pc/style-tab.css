@@ -1,0 +1,19 @@
+/*
+
+*/
+
+@import url('style.css');
+
+
+article.index .cover-bl > a {
+    opacity: 1;
+    background: none;
+}
+article.index .cover-bl > a:hover span,
+article.index .cover-bl > a:hover .ww,
+article.index .cover-bl > a:hover .hh,
+.bl-belt article.index .cover-bl > a:hover .h3 {
+    -webkit-animation: none;
+    animation: none;
+}
+

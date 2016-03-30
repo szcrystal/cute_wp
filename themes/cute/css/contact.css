@@ -1,0 +1,131 @@
+body .entry-content {
+  /*		PC version */
+  /*		dl.cform {
+  			@include clearfix;
+  			width: 96%;
+  			margin-bottom: 20px;
+  			background: #ecf9ff;
+  			dt {
+  				float:left;
+  				clear:left;
+  				border-bottom: 1px solid white;
+  				padding: 10px 15px;
+  				margin: 0;
+  				width: 30%;
+  				height: 4em;
+  				font-weight: 400;
+  				span.req {
+  					display: inline-block;
+  					color: red;
+  					margin-left: 10px;
+  				}
+  				&.last {
+  					height: 12em;
+  				}
+  			}
+  			dd {
+  				float:left;
+  				background: white;
+  				border-bottom: 1px solid #ecf9ff;
+  				border-right: 1px solid #ecf9ff;
+  				padding: 10px 15px;
+  				margin: 0;
+  				width: 70%;
+  				height: 4em;
+  				input[type="text"], input[type="email"], input[type="tel"], textarea {
+  					padding: 5px;
+  					width: 90%;
+  				}
+  				textarea {
+  					height: 8em;
+  				}
+  				span.your-zip {
+  					input[type="text"] {
+  						width: 15em;
+  					}
+  				}
+  				&.top {
+  					border-top: 1px solid #ecf9ff;
+  				}
+  				&.last {
+  					border-bottom: 1px solid #ecf9ff;
+  					height: 12em;
+  				}
+  			}
+  		}
+  		p.submit {
+  			width: 90%;
+  			margin-bottom: 60px;
+  			input {
+  				@include border-radius(3px);
+  				display: block;
+  				margin: 0 auto;
+  				width: 185px;
+  				height: 44px;
+  				background: #a3dfe0;
+  				border: none;
+  				cursor: pointer;
+  			}
+  		}
+  */
+  /*		SP version */
+}
+body .entry-content h3 {
+  font-size: 2.2rem !important;
+  height: 40px;
+  background: url(../images/contact/ttl-icon.png) no-repeat 10px 10px #ece2d0;
+  line-height: 39px !important;
+  margin-bottom: 20px !important;
+  padding-left: 40px;
+}
+body .entry-content h4 {
+  padding-left: 50px;
+  height: 40px;
+  background: url(../images/common/flower-icon.png) no-repeat 5px top;
+  margin: 40px 0 5px 0 !important;
+  line-height: 35px !important;
+  font-size: 2rem !important;
+  color: #993333;
+}
+body .entry-content h4 span {
+  color: #333;
+  font-size: 1.2rem;
+  margin-left: 1.5rem;
+}
+body .entry-content .row {
+  margin-bottom: 50px;
+}
+body .entry-content .row .fleft img {
+  display: inline;
+}
+body .entry-content .row .fleft:last-child {
+  padding-top: 0.8rem;
+  margin-left: 3rem;
+}
+body .entry-content dl.cform dt {
+  font-weight: 400;
+}
+body .entry-content dl.cform dt span.req {
+  display: inline-block;
+  color: red;
+  margin-left: 10px;
+}
+body .entry-content dl.cform dd {
+  margin: 0 0 20px 0;
+}
+body .entry-content p.submit {
+  width: 100%;
+  margin: 0 0 30px 0;
+}
+body .entry-content p.submit input {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  display: block;
+  margin: 0 auto;
+  width: 185px;
+  height: 44px;
+  background: #a3dfe0;
+  border: none;
+  cursor: pointer;
+}

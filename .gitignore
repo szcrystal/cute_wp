@@ -5,9 +5,12 @@ uploads/
 *.xcworkspace
 .DS_Store
 
-themes/
-!themes/cute/
-!themes/cute_pc/
+themes/index.php
+themes/twentyfifteen/
+themes/twentyfourteen/
+themes/twentysixteen/
+themes/twentythirteen/
+
 themes/cute_pc/images/mv/
 
 plugins/
