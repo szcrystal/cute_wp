@@ -14,7 +14,7 @@ get_header(); ?>
     	
 <?php if ( is_home() || is_category() ) {
 		if(isLocal())
-	        echo do_shortcode("[metaslider id=410]");
+	        echo do_shortcode("[metaslider id=412]");
         else
         	echo do_shortcode("[metaslider id=466]");
     }
