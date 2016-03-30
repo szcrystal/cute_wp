@@ -1,9 +1,10 @@
 languages/
 upgrade/
 uploads/
-./index.php
+/index.php
 *.xcworkspace
 .DS_Store
+.gitignore
 
 themes/index.php
 themes/twentyfifteen/
@@ -13,5 +14,6 @@ themes/twentythirteen/
 
 themes/cute_pc/images/mv/
 
-!plugins/szc_switch/
+/plugins/
+!/plugins/szc_switch/
 
