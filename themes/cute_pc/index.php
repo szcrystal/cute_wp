@@ -118,7 +118,7 @@ get_header(); ?>
 		if ( $query -> have_posts() ) : ?>
 
 			<section>
-            	<h2><?php echo $val->slug; ?></h2>
+            	<h2><?php echo ud($val->slug); ?></h2>
                 <div class="wrap-list">
 
         <?php

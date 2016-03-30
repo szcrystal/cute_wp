@@ -301,6 +301,11 @@ function idBySlug($arg) {
         NULL;
 }
 
+/* url decode */
+function ud($str) {
+	return urldecode($str);
+}
+
 // --------------
 
 function isLocal() {

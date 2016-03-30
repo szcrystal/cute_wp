@@ -242,7 +242,7 @@ $(function(e){ //ready
     szcExec.searchAnim();
     szcExec.contentPosi();
     
-    if(szcExec.isLocal()) szcExec.checkWidth();
+    //if(szcExec.isLocal()) szcExec.checkWidth();
 });
 
 

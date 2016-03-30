@@ -35,8 +35,8 @@ get_header(); ?>
         	<h2>
             <?php	
             	if(is_category()) { 
-                	$catObj = get_category( $cat );
-            		echo $catObj->slug;
+                	$catObj = get_category( $cat ); //$cat:cat_ID
+            		echo ud($catObj->slug);
                 } 
                 elseif(is_tag()) {
                 	echo single_tag_title('TAG : ');

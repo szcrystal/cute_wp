@@ -51,9 +51,10 @@
                 $cates = get_categories( $args );
                 $n = 1;
                 $count = 6;
+                $sMenu = array();
                 
-                foreach($cates as $val) {
-                    $format = '<li><a href="'.get_category_link($val->cat_ID).'" title="'.$val->cate_name.'">'. $val->slug . '</a><span></span></li>'."\n";
+                foreach($cates as $cate) {
+                    $format = '<li><a href="'.get_category_link($cate->cat_ID).'" title="'.$cate->cate_name.'">'. ud($cate->slug) . '</a><span></span></li>'."\n";
                     
                     if($n > $count) //Separate Child ul Over 8 count
                         $sMenu[] = $format;
@@ -64,7 +65,7 @@
                 }
                 
                 if(count($sMenu) > 0) {
-                    $out = '<li class="tgl-on"><i class="fa fa-caret-down"></i>'."\n".'<ul>'."\n"; //<li><i class="fa fa-caret-down"></i>'."\n".
+                    $out = '<li class="tgl-on"><i class="fa fa-caret-down"></i>'."\n".'<ul>'."\n";
                         
                     foreach($sMenu as $val) 
                     	$out .= $val;
