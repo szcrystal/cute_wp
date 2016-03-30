@@ -1,0 +1,15 @@
+languages/
+upgrade/
+uploads/
+./index.php
+*.xcworkspace
+.DS_Store
+
+themes/
+!themes/cute/
+!themes/cute_pc/
+themes/cute_pc/images/mv/
+
+plugins/
+!plugins/szc_switch/
+
