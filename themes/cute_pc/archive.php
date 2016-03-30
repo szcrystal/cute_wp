@@ -3,8 +3,6 @@
  * The template for displaying archive pages.
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
- *
- * @package _s
  */
 
 get_header(); ?>
@@ -29,11 +27,10 @@ get_header(); ?>
 	<div id="primary" class="content-area clear">
 		<main id="main" class="site-main" role="main">
         	
-            <?php
+        <?php
 		if ( have_posts() ) : ?>
         
-        	<h2>
-            <?php	
+        	<h2><?php	
             	if(is_category()) { 
                 	$catObj = get_category( $cat ); //$cat:cat_ID
             		echo ud($catObj->slug);
@@ -44,38 +41,7 @@ get_header(); ?>
                 else {
                 	the_archive_title();
                 }
-            ?>
-            </h2>
-            <div class="clear">
-        <?php
-       
-//        	$query = new WP_Query(
-//            	array(
-//                   'cat' => $cat,
-//                   'post_type'=>'post',
-//                   'posts_per_page'=>16,
-//                	'paged'=> get_query_var('paged') ? get_query_var('paged') : 1,
-////                   'post_type' => array('shop', 'post', 'news'),
-////                                    'post_status' => 'publish',
-////                                    //'post_type' => 'post',
-////                                    'posts_per_page' => 10,
-////                                    'orderby'=>'date ID',
-////                                    'order'=>'DESC',
-//                )
-//            );
-//            
-//          while ( $query->have_posts() ) : $query->the_post();
-//          	get_template_part( 'template-parts/content', 'index' );
-//          endwhile;
-          ?>
-          
-        </div>
-        
-        <?php //set_pagenation($query);  
-        
-//        }
-//        else {
-        ?>
+            ?></h2>
 
         <?php
             //the_archive_title( '<h2>', '</h2>' );
@@ -103,7 +69,6 @@ get_header(); ?>
 
 		endif; 
         
-         
         ?>
 
 		</main><!-- #main -->
