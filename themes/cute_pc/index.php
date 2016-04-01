@@ -92,10 +92,14 @@ get_header(); ?>
         
         <?php
         
-        $args = array(
-            'type'                     => 'post',
-            'orderby'                  => 'ID',
-            'order'                    => 'DESC',
+        $otherID = get_cat_ID( 'others' );
+        
+        $args = array( //for Category Arg
+            'type' => 'post',
+            'exclude' => $otherID,
+            'orderby' => 'ID',
+            'order' => 'ASC',
+            
         );
         
         $cates = get_categories( $args );
@@ -115,7 +119,10 @@ get_header(); ?>
             );
 
 		
-		if ( $query -> have_posts() ) : ?>
+		if ( $query -> have_posts() ) :
+            
+            //if($val->slug != 'others') {
+        ?>
 
 			<section>
             	<h2><?php echo ud($val->slug); ?></h2>
@@ -128,6 +135,11 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', 'index' ); //From Main template
 
 			endwhile;
+            
+//            }
+//            else {
+//            
+//            }
 
 			//the_posts_navigation();
 
@@ -148,12 +160,42 @@ get_header(); ?>
         </section>
         
         <?php } //foreach
+        
+        if($otherID != 0) {
+            $otherObj = get_category($otherID);
+            
+            $queryOther = new WP_Query(
+              array(
+                    'cat'=>$otherID,
+                    'post_type'=>'post',
+                    'orderby'=>'date ID',
+                )
+              );
         ?>
+
+        <section>
+            <h2><?php echo ud($otherObj->slug); ?></h2>
+            <div class="wrap-list">
+
+        <?php
+            while ( $queryOther->have_posts() ) : $queryOther->the_post();
+                get_template_part( 'template-parts/content', 'index' ); //From Main template
+            endwhile;
+        
+        ?>
+
+                <div class="more">
+                <a href="<?php echo get_category_link($otherID); ?>">MORE<i class="fa fa-angle-double-right"></i></a>
+                </div>
+
+            </div>
+        </section>
+
+        <?php } ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-    
-    
+
     <?php get_template_part( 'template-parts/content', 'rank' ); ?>
     
 <?php

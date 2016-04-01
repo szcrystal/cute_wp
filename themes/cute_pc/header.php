@@ -45,21 +45,27 @@
                 $args = array(
                     'type' => 'post',
                     'orderby' => 'ID',
-                    'order' => 'DESC',
+                    'order' => 'ASC',
                 );
             
                 $cates = get_categories( $args );
                 $n = 1;
-                $count = 6;
+                $count = 8;
                 $sMenu = array();
+                $other = '';
                 
                 foreach($cates as $cate) {
                     $format = '<li><a href="'.get_category_link($cate->cat_ID).'" title="'.$cate->cate_name.'">'. ud($cate->slug) . '</a><span></span></li>'."\n";
                     
-                    if($n > $count) //Separate Child ul Over 8 count
-                        $sMenu[] = $format;
-                    else 
-                        echo $format;
+                    if($cate->slug != 'others') {
+                        if($n > $count) //Separate Child ul Over 8 count
+                            $sMenu[] = $format;
+                        else
+                            echo $format;
+                    }
+                    else {
+                        $other = $format;
+                    }
                     
                     $n++;
                 }
@@ -70,10 +76,18 @@
                     foreach($sMenu as $val) 
                     	$out .= $val;
                     
+                    if($other != '')
+                        $out .= $other;
+                    
                     $out .= '</ul>'."\n".'</li>'."\n";
 
                     echo $out;
                 }
+                else {
+                    if($other != '')
+                        echo $other;
+                }
+                
             	//main-navigation Category Menu END -------------
                 //wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) );
             ?>

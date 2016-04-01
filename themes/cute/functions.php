@@ -209,17 +209,28 @@ if(isAgent('sp')) /* ***** */
 function cateMenuList() {
 	$args = array(
         'orderby' => 'ID',
-        'order' => 'DESC',
+        'order' => 'ASC',
     );
+    //'<li class="cat-item cat-item-'.$val->cat_ID.'"><a href="'.get_category_link($val->cat_ID).'" title="'.$val->name.'">'. $val->name . '</a></li>'."\n";
+    
+    $format = '<li class="cat-item cat-item-%1$s"><a href="' . get_category_link('%1$s') .'" title="%2$s">%2$s</a></li>'."\n";
 
     $cates = get_categories( $args );
+    $other = '';
     
     $wrap = '<section id="categories-4" class="widget widget_categories">'."\n";
     $wrap .= '<h2 class="widget-title">カテゴリー</h2>'."\n";		
     $wrap .= "<ul>\n";
     
-    foreach($cates as $val) 
-        $wrap .= '<li class="cat-item cat-item-'.$val->cat_ID.'"><a href="'.get_category_link($val->cat_ID).'" title="'.$val->name.'">'. $val->name . '</a></li>'."\n";
+    foreach($cates as $val) {
+        if($val -> slug != 'others')
+            $wrap .= sprintf($format, $val->cat_ID, $val->name);
+        else
+            $other = sprintf($format, $val->cat_ID, $val->name);
+    }
+    
+    if($other != '')
+        $wrap .= $other;
     
     $wrap .= "</ul>\n</section>\n";
     
