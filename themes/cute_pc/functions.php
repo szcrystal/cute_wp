@@ -306,21 +306,29 @@ function ud($str) {
 	return urldecode($str);
 }
 
+/* Caterogy Others set to End */
+function otherSetToArrEnd($cateArr) { //Use In header index template-tag.php
+
+	//添字振り直し get_categories()で取得した時に、postを持たないcategory分のkeyに穴が空くので。 後のarray_spliceに影響
+    $cateArr = array_values($cateArr); // OR array_splice($cateArr, 0, 0);
+
+	foreach($cateArr as $key => $val) {
+        if($val->slug == 'others') {
+            array_splice($cateArr, $key, 1); //remove 「Others」 once
+            $cateArr[] = $val;
+            break;
+        }
+    }
+    
+    return $cateArr;
+}
+
+
 // --------------
 
 function isLocal() {
     return ($_SERVER['SERVER_NAME'] == '192.168.10.17' || $_SERVER['SERVER_NAME'] == '192.168.10.15' || $_SERVER['SERVER_NAME'] == 'localhost');
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

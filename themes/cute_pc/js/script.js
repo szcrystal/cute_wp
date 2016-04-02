@@ -196,6 +196,7 @@ var szcExec = (function() {
             
             
             //Set main-navigation Width On Load
+            /* No Use Now ---
             $(window).on('load', function(){ //document.addEventListener('DOMContentLoaded', function(){
                 var $navLi = $('.main-navigation > ul > li');
                 
@@ -210,7 +211,8 @@ var szcExec = (function() {
                 }
 
                 $('.main-navigation').css({width:liW-7, paddingLeft:10}).fadeTo(1,10);
-             });
+            });
+            --- */
             
        },
        
@@ -242,7 +244,7 @@ $(function(e){ //ready
     szcExec.searchAnim();
     szcExec.contentPosi();
     
-    if(szcExec.isLocal()) szcExec.checkWidth();
+    //if(szcExec.isLocal()) szcExec.checkWidth();
 });
 
 

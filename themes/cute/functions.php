@@ -237,3 +237,5 @@ function cateMenuList() {
     echo $wrap;
 }
 
+
+

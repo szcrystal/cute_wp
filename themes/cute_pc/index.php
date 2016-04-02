@@ -96,14 +96,15 @@ get_header(); ?>
         
         $args = array( //for Category Arg
             'type' => 'post',
-            'exclude' => $otherID,
+            //'exclude' => $otherID,
             'orderby' => 'ID',
             'order' => 'ASC',
             
         );
         
         $cates = get_categories( $args );
-     
+        $cates = otherSetToArrEnd($cates);
+             
         foreach($cates as $val) {
         
         	$query = new WP_Query(
@@ -119,9 +120,7 @@ get_header(); ?>
             );
 
 		
-		if ( $query -> have_posts() ) :
-            
-            //if($val->slug != 'others') {
+		if ( $query -> have_posts() ) :            
         ?>
 
 			<section>
@@ -135,13 +134,6 @@ get_header(); ?>
 				get_template_part( 'template-parts/content', 'index' ); //From Main template
 
 			endwhile;
-            
-//            }
-//            else {
-//            
-//            }
-
-			//the_posts_navigation();
 
 		else :
 
@@ -149,7 +141,8 @@ get_header(); ?>
 
 		endif; 
         
-        wp_reset_postdata();
+        //wp_reset_postdata();
+        
         ?>
         
         	<div class="more">
@@ -159,39 +152,11 @@ get_header(); ?>
             </div>
         </section>
         
-        <?php } //foreach
-        
-        if($otherID != 0) {
-            $otherObj = get_category($otherID);
-            
-            $queryOther = new WP_Query(
-              array(
-                    'cat'=>$otherID,
-                    'post_type'=>'post',
-                    'orderby'=>'date ID',
-                )
-              );
-        ?>
-
-        <section>
-            <h2><?php echo ud($otherObj->slug); ?></h2>
-            <div class="wrap-list">
-
-        <?php
-            while ( $queryOther->have_posts() ) : $queryOther->the_post();
-                get_template_part( 'template-parts/content', 'index' ); //From Main template
-            endwhile;
+        <?php 
+        	wp_reset_query();
+        } //foreach
         
         ?>
-
-                <div class="more">
-                <a href="<?php echo get_category_link($otherID); ?>">MORE<i class="fa fa-angle-double-right"></i></a>
-                </div>
-
-            </div>
-        </section>
-
-        <?php } ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->

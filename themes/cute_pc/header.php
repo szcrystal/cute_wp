@@ -49,23 +49,19 @@
                 );
             
                 $cates = get_categories( $args );
+                $cates = otherSetToArrEnd($cates);
+                
                 $n = 1;
-                $count = 8;
+                $count = 7;
                 $sMenu = array();
-                $other = '';
                 
                 foreach($cates as $cate) {
                     $format = '<li><a href="'.get_category_link($cate->cat_ID).'" title="'.$cate->cate_name.'">'. ud($cate->slug) . '</a><span></span></li>'."\n";
                     
-                    if($cate->slug != 'others') {
-                        if($n > $count) //Separate Child ul Over 8 count
-                            $sMenu[] = $format;
-                        else
-                            echo $format;
-                    }
-                    else {
-                        $other = $format;
-                    }
+                    if($n > $count) //Separate Child ul Over 8 count
+                        $sMenu[] = $format;
+                    else
+                        echo $format;
                     
                     $n++;
                 }
@@ -76,16 +72,9 @@
                     foreach($sMenu as $val) 
                     	$out .= $val;
                     
-                    if($other != '')
-                        $out .= $other;
-                    
                     $out .= '</ul>'."\n".'</li>'."\n";
 
                     echo $out;
-                }
-                else {
-                    if($other != '')
-                        echo $other;
                 }
                 
             	//main-navigation Category Menu END -------------
