@@ -113,9 +113,11 @@ wpp_get_mostpopular($wpp2);
         </div>
         
         <div class="ban-area">
-        	<?php 
-                $p = get_post(idBySlug('banner'));
-             	echo $p-> post_content;
+        	<?php                 
+                if($banID = idBySlug('banner')) {
+                	$p = get_post($banID);
+   	             	echo $p-> post_content;
+                }
             ?> 
 
         </div>
