@@ -324,12 +324,53 @@ function otherSetToArrEnd($cateArr) { //Use In header index template-tag.php
 }
 
 
-// --------------
+/*Attachmentのパーマリンクを変える ***** */
+//function wpd_attachment_link( $link, $post_id ){
+//    $post = get_post( $post_id );
+//    return home_url( '/attachment/' . $post->ID);
+//}
+//add_filter( 'attachment_link', 'wpd_attachment_link', 20, 2 );
+
+/*Attachmentの編集時のフック ***** */
+//function insert_custom_default_caption($post, $attachment) {
+//    if ( substr($post['post_mime_type'], 0, 5) == 'image' ) {
+//        if ( strlen(trim($post['post_title'])) == 0 ) {
+//            $post['post_title'] = preg_replace('/\.\w+$/', '', basename($post['guid']));
+//            $post['errors']['post_title']['errors'][] = __('Empty Title filled from filename.');
+//        }
+//        // captions are saved as the post_excerpt, so we check for it before overwriting
+//        // if no captions were provided by the user, we fill it with our default
+//        if ( strlen(trim($post['post_excerpt'])) == 0 ) {
+//            $post['post_excerpt'] = 'default caption';
+//        }
+//    }
+//	$post['post_name'] = 'a'.$post['post_name'];
+//    
+//	return $post;
+//}
+//add_filter('attachment_fields_to_save', 'insert_custom_default_caption', 10, 2);
+
+/*Attachment新規追加時（アップロード時）フックを変えればPostにも可 ***** */
+function filter_handler( $data , $postarr ) {
+	$cates = get_categories();
+    
+    foreach($cates as $cate) {
+    	if($cate->slug == $data['post_name']) {
+        	$data['post_name'] = $data['post_name'].'-atc'. strtotime($data['post_date']);
+            break;
+        }
+    }
+
+	return $data;
+}
+//add_filter( 'wp_insert_post_data', 'filter_handler', '99', 2 );
+add_filter( 'wp_insert_attachment_data', 'filter_handler', '99', 2 );
+
+
+
+// -----------------------
 
 function isLocal() {
     return ($_SERVER['SERVER_NAME'] == '192.168.10.17' || $_SERVER['SERVER_NAME'] == '192.168.10.15' || $_SERVER['SERVER_NAME'] == 'localhost');
 }
-
-
-
 
