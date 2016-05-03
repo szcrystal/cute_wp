@@ -371,6 +371,6 @@ add_filter( 'wp_insert_attachment_data', 'filter_handler', '99', 2 );
 // -----------------------
 
 function isLocal() {
-    return ($_SERVER['SERVER_NAME'] == '192.168.10.17' || $_SERVER['SERVER_NAME'] == '192.168.10.15' || $_SERVER['SERVER_NAME'] == 'localhost');
+    return strpos($_SERVER['SERVER_NAME'], '.dev') !== false;
 }
 

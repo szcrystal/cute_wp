@@ -1,10 +1,10 @@
 (function($) {
 
 var szcExec = (function() {
+
+	return {
     
-    return {
-    
-        opts: {
+		opts: {
             crtClass: 'current',
             btnID: '.top_btn',
             all: 'html, body',
@@ -12,8 +12,8 @@ var szcExec = (function() {
             transitEnd: 'webkitTransitionEnd MSTransitionEnd otransitionend transitionend', //mozTransitionEnd 
         },
         
-        addCurrent: function() {
-            var url = window.location;
+		addCurrent: function() {
+        	var url = window.location;
             $('.main-navigation a[href="'+url+'"]').addClass(this.opts.crtClass);
         },
         
@@ -41,7 +41,7 @@ var szcExec = (function() {
         	$('.tgl-on').on('click', function(){
             	var $nav = $(this).find('ul');
                 
-                $nav.slideToggle(300);
+            	$nav.slideToggle(300);
                 
 //            	if($nav.is(':hidden')) {
 //                	$nav.slideDown(300);
@@ -78,29 +78,29 @@ var szcExec = (function() {
         },
         
         
-        scrEve: function() {
+		scrEve: function() {
 
-		    var $window = $(window);
+        	var $window = $(window);
             var wh = $(window).height();
             var th = this;
             
             $(window).scroll(function() {
                     
-                    // '50%' + -($window.scrollTop() / 20) + 'px'
-                    $sprite = $('.wrap-cal');
-                    var yPos = $sprite.data('y') - ($window.scrollTop() / $sprite.data('speed')); //data-y: wrap-calのTOP位置 
+            	// '50%' + -($window.scrollTop() / 20) + 'px'
+                $sprite = $('.wrap-cal');
+                var yPos = $sprite.data('y') - ($window.scrollTop() / $sprite.data('speed')); //data-y: wrap-calのTOP位置 
                     
-                    if($window.scrollTop() >= 0) { //scroll:0以下になるとガタつくので
-                        $sprite.css('top', yPos);                    
-                	}
+                if($window.scrollTop() >= 0) { //scroll:0以下になるとガタつくので
+                    $sprite.css('top', yPos);                    
+                }
        	 	});
-       },
-       
-       addAnim: function() {
-       		var th = this;
+        },
+        
+        addAnim: function() {
+        	var th = this;
             
             //Set Size to A tag
-			function setHeightToA() {
+        	function setHeightToA() {
             	//var $index = $('.bl-belt article.index, .rank article.index');
                 var $index = $('article.index');
 
@@ -112,8 +112,8 @@ var szcExec = (function() {
                         //$a.find('.entry-meta').text(ah);
                         $a.find('.cover-bl > a').css({height:ah});
                     //});
-                });
-            }
+            	});
+			}
 
             $(window).on({
             	'load': setHeightToA,
@@ -132,10 +132,10 @@ var szcExec = (function() {
                 }
             });
             
-       },
-       
-       searchAnim: function() {
-       		var $s = $('.site-header .fa-search');
+        },
+        
+        searchAnim: function() {
+        	var $s = $('.site-header .fa-search');
             var $form = $('.search-form');
             
             $s.on('click', function(e){
@@ -159,9 +159,9 @@ var szcExec = (function() {
                 		$form.animate({ top:0 }, 'normal', 'easeInBack');
                 }
             });
-       },
-       
-       contentPosi: function(){
+		},
+        
+        contentPosi: function() {
        		
             //SetHeight to Content
             function setHeightContent() {
@@ -213,19 +213,18 @@ var szcExec = (function() {
                 $('.main-navigation').css({width:liW-7, paddingLeft:10}).fadeTo(1,10);
             });
             --- */
-            
-       },
-       
-       checkWidth: function() {
-             $(window).on({
-                'load': function(){
+        },
+        
+        checkWidth: function() {
+    		$(window).on({
+            	'load': function(){
                     $('h2').text($(window).width());
                 },
                 'resize': function(){
                     $('h2').text($(window).width());
-                },
+				},
             });
-       },
+        },
 
     } //return
 
