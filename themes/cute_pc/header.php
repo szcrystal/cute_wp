@@ -3,6 +3,14 @@
  * The header for our theme.
  *
  */
+
+//環境変数を取得する /env_vars/env.ini and env.php にセットする記述をしている
+//httpd.confにも設定可能 現在はこれにしている
+/*
+$path = "{$_SERVER['DOCUMENT_ROOT']}/../env_vars/env.php";
+if(file_exists($path))
+    include_once($path);
+*/
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>

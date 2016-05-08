@@ -3,7 +3,9 @@
  * The main template file.
  *
  */
-get_header(); ?>
+
+get_header();
+?>
 
 <div class="wrap-cal" data-speed="2.5" data-y="50">
     <div class="cal">

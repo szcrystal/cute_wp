@@ -11,7 +11,7 @@ get_header(); ?>
     <div class="cal">
 
 <?php if ( is_home() || is_category() ) {
-		$slideID = isLocal() ? 410 : 466;
+		$slideID = isLocal() ? ($_SERVER['THIS_S'] == 'mba' ? 412 : 410) : 466;
         echo do_shortcode("[metaslider id={$slideID}]");
         //echo do_shortcode("[metaslider id=466]");
     }
