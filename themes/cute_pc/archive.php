@@ -10,11 +10,11 @@ get_header(); ?>
 <div class="wrap-cal" data-speed="2.5" data-y="50">
     <div class="cal">
     	
-<?php if ( is_home() || is_category() ) {
-		if(isLocal())
-	        echo do_shortcode("[metaslider id=410]");
-        else
-        	echo do_shortcode("[metaslider id=466]");
+<?php
+    if ( is_home() || is_category() ) {
+        $slideID = isLocal() ? 412 : 466;
+        echo do_shortcode("[metaslider id={$slideID}]");
+        //echo do_shortcode("[metaslider id=466]");
     }
 ?>
 
